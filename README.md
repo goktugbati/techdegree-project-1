@@ -1,2 +1,2 @@
 # techdegree-project-1
-Build a soccer game
+Build a soccer league
