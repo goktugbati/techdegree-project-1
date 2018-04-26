@@ -58,7 +58,7 @@ if __name__ == "__main__":
         count += 1
     #Create the teams.txt file
     with open("teams.txt", "a") as file:
-        #Create function that takes a team as parameter and writes it to the text file
+        #Create a function that takes a team as parameter and writes it to the text file
         def add_team(team):
             for player in team:
                 file.write(player + "\n")
