@@ -5,7 +5,7 @@ import csv
 if __name__ == "__main__":
     with open('soccer_players.csv', newline='') as csvfile:
         # read csv file as a list of dictionaries
-        # Each value seperated by a comma in the first row is set as key a key value
+        # Each value seperated by a comma in the first row is set as a key value
         leagereader = csv.DictReader(csvfile)
         rows = list(leagereader)
         #Create the teams
