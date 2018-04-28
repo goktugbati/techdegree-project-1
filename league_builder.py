@@ -12,7 +12,7 @@ if __name__ == "__main__":
         team1 = ['Dragons']
         team2 = ['Sharks']
         team3 = ['Raptors']
-        #Two dictionaries to sort players into two groups
+        #Two lists to sort players into two groups
         experienced_players = []
         inexperienced_players = []
         #Iterates over the list and
@@ -34,28 +34,24 @@ if __name__ == "__main__":
     #Find number of experienced and inexperienced players players to assign each team
     experienced_players_each_team = len(experienced_players) / 3
     inexperienced_players_each_team = len(inexperienced_players) / 3
-    #Counter for the for loop
-    count = 0
+    #Create a function that takes a list and a number as parameters and iterates over the list
+    def add_players(player_list, number_of_players):
+        #Counter for the for loop
+        count = 0
+        for player in player_list:
+            if count<number_of_players:
+                team1.append(player)
+            elif count<number_of_players*2:
+                team2.append(player)
+            else:
+                team3.append(player)
+            count += 1
     #Assign experienced_players to each team equally
-    for player in experienced_players:
-        if count<experienced_players_each_team:
-            team1.append(player)
-        elif count<experienced_players_each_team*2:
-            team2.append(player)
-        else:
-            team3.append(player)
-        count += 1
-    #Set counter to 0 again
-    count = 0
+    add_players(experienced_players, experienced_players_each_team)
+
     #Assign inexperienced_players to each team equally
-    for player in inexperienced_players:
-        if count<inexperienced_players_each_team:
-            team1.append(player)
-        elif count<inexperienced_players_each_team*2:
-            team2.append(player)
-        else:
-            team3.append(player)
-        count += 1
+    add_players(inexperienced_players, inexperienced_players_each_team)
+
     #Create the teams.txt file
     with open("teams.txt", "a") as file:
         #Create a function that takes a team as parameter and writes it to the text file
